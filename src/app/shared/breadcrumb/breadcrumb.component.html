@@ -1,0 +1,12 @@
+
+
+<nav class="bg-gray-100 p-3 rounded-lg">
+  <ol class="list-reset flex text-gray-600">
+    <li><a routerLink="./dashboard" class="text-blue-600 hover:underline">Inicio</a></li>
+    <li *ngFor="let item of breadcrumbs; let last = last" class="mx-2">
+      <span>/</span>
+      <a *ngIf="!last" [routerLink]="item.url" class="mx-2 text-blue-600 hover:underline">{{ item.label }}</a>
+      <span *ngIf="last" class="mx-2 text-gray-800">{{ item.label }}</span>
+    </li>
+  </ol>
+</nav>

@@ -1,0 +1,51 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "usuario": "John Doe",
+      "email": "john.due@gmail.com"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "description": "Completar informe mensual",
+      "completed": true
+    },
+    {
+      "id": 2,
+      "description": "Llamar al cliente para seguimiento",
+      "completed": true
+    },
+    {
+      "id": 3,
+      "description": "Actualizar el software del equipo",
+      "completed": false
+    },
+    {
+      "id": 4,
+      "description": "Preparar presentación para la reunión",
+      "completed": true
+    },
+    {
+      "id": 5,
+      "description": "Enviar factura al departamento de contabilidad",
+      "completed": false
+    },
+    {
+      "id": 6,
+      "description": "Revisar y responder correos electrónicos",
+      "completed": true
+    },
+    {
+      "id": 7,
+      "description": "Configurar nueva impresora de la oficina",
+      "completed": false
+    },
+    {
+      "id": 8,
+      "description": "Organizar documentos del proyecto actual",
+      "completed": true
+    }
+  ]
+}

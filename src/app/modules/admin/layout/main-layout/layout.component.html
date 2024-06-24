@@ -1,0 +1,60 @@
+<div class="flex h-screen bg-gray-100">
+
+  <!-- sidebar -->
+  <div [ngClass]="{'w-16': sidebarCollapsed, 'w-64': !sidebarCollapsed}"
+       class="flex flex-col bg-slate-900 transition-all duration-300">
+      <div class="flex items-center justify-center h-16 bg-gray-900">
+          <span [class.hidden]="sidebarCollapsed" class="text-white font-bold uppercase">Panel Tareas</span>
+      </div>
+      <div class="flex flex-col flex-1 overflow-y-auto">
+          <nav class="flex-1 items-center  bg-slate-900">
+                <a  routerLink="./dashboard" routerLinkActive="bg-gray-700"  matTooltip="Home" matTooltipPosition="right"
+                [matTooltipDisabled]="!sidebarCollapsed" [matTooltipShowDelay]="500"
+              class="flex items-center px-4 py-2    text-gray-100 hover:bg-gray-700">
+                  <mat-icon  class="h-6 w-6 mr-2 text-gray-400">dashboard</mat-icon>
+                  <span [class.hidden]="sidebarCollapsed">Dashboard</span>
+              </a>
+              <a routerLink="./usuarios/lista-usuarios"routerLinkActive="bg-gray-700"  matTooltip="Usuarios" matTooltipPosition="right"
+                 [matTooltipDisabled]="!sidebarCollapsed" [matTooltipShowDelay]="500"
+              class="flex items-center px-4 py-2 mt-2 text-gray-100 hover:bg-gray-700">
+                  <mat-icon class="h-6 w-6 mr-2 text-gray-400">people</mat-icon>
+                  <span [class.hidden]="sidebarCollapsed">Usuarios</span>
+              </a>
+              <a routerLink="./tareas/lista-tareas"  matTooltip="Tareas" matTooltipPosition="right" routerLinkActive="bg-gray-700"
+              [matTooltipDisabled]="!sidebarCollapsed" [matTooltipShowDelay]="500"
+              class="flex items-center px-4 py-2 mt-2 text-gray-100 hover:bg-gray-700">
+                  <mat-icon class="h-6 w-6 mr-2 text-gray-400">tasks</mat-icon>
+                  <span [class.hidden]="sidebarCollapsed">Tareas</span>
+              </a>
+          </nav>
+      </div>
+  </div>
+
+
+  <!-- Main content -->
+  <div class="flex flex-col flex-1 overflow-y-auto">
+      <div class="flex items-center justify-between p-2  border-b border-gray-200">
+          <div class="flex items-center px-4">
+            <button (click)="toggleSidebar()" class="text-gray-500 focus:outline-none focus:text-gray-700">
+              <mat-icon *ngIf="sidebarCollapsed">menu</mat-icon>
+              <mat-icon *ngIf="!sidebarCollapsed">close</mat-icon>
+            </button>
+
+
+          </div>
+          <div class="flex items-center pr-4">
+              <button
+                  class="flex items-center text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
+                  <mat-icon *ngIf="sidebarCollapsed">person</mat-icon>
+
+
+              </button>
+          </div>
+      </div>
+      <div class="p-4  min-h-screen" >
+        <app-breadcrumb></app-breadcrumb>
+          <router-outlet></router-outlet>
+      </div>
+  </div>
+
+</div>

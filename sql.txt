@@ -1,0 +1,104 @@
+create database db_laravel11;
+use db_laravel11;
+
+CREATE TABLE tipos_usuarios (
+    id_tipo_usuario INT AUTO_INCREMENT PRIMARY KEY,
+    tipo_usuario ENUM('Jefatura', 'Instructor') NOT NULL
+);
+
+-- Insertar los tipos de usuario
+INSERT INTO tipos_usuarios (tipo_usuario) VALUES ('Jefatura'), ('Instructor');
+
+select * from tipos_usuarios;
+
+CREATE TABLE usuarios (
+    id_usuario VARCHAR(10) PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    apellidos VARCHAR(100) NOT NULL,
+    tipo_usuario_id INT NOT NULL,
+    edad INT NOT NULL,
+    fecha_nacimiento DATE NOT NULL,
+    FOREIGN KEY (tipo_usuario_id) REFERENCES tipos_usuarios(id_tipo_usuario)
+);
+
+
+DELIMITER //
+
+CREATE PROCEDURE insertar_usuario (
+    IN p_id_usuario VARCHAR(10),
+    IN p_nombre VARCHAR(100),
+    IN p_apellidos VARCHAR(100),
+    IN p_tipo_usuario_id INT,
+    IN p_edad INT,
+    IN p_fecha_nacimiento DATE
+)
+BEGIN
+    INSERT INTO usuarios (id_usuario, nombre, apellidos, tipo_usuario_id, edad, fecha_nacimiento)
+    VALUES (p_id_usuario, p_nombre, p_apellidos, p_tipo_usuario_id, p_edad, p_fecha_nacimiento);
+END //
+
+DELIMITER ;
+
+
+DELIMITER //
+
+CREATE PROCEDURE actualizar_usuario (
+    IN p_id_usuario VARCHAR(10),
+    IN p_nombre VARCHAR(100),
+    IN p_apellidos VARCHAR(100),
+    IN p_tipo_usuario_id INT,
+    IN p_edad INT,
+    IN p_fecha_nacimiento DATE
+)
+BEGIN
+    UPDATE usuarios
+    SET nombre = p_nombre,
+        apellidos = p_apellidos,
+        tipo_usuario_id = p_tipo_usuario_id,
+        edad = p_edad,
+        fecha_nacimiento = p_fecha_nacimiento
+    WHERE id_usuario = p_id_usuario;
+END //
+
+DELIMITER ;
+
+
+DELIMITER //
+
+CREATE PROCEDURE eliminar_usuario (
+    IN p_id_usuario VARCHAR(10)
+)
+BEGIN
+    DELETE FROM usuarios WHERE id_usuario = p_id_usuario;
+END //
+
+DELIMITER ;
+
+DELIMITER //
+
+CREATE PROCEDURE obtener_usuarios()
+BEGIN
+    SELECT u.id_usuario, u.nombre, u.apellidos, tu.tipo_usuario, u.edad, u.fecha_nacimiento
+    FROM usuarios u
+    JOIN tipos_usuarios tu ON u.tipo_usuario_id = tu.id_tipo_usuario;
+END //
+
+DELIMITER ;
+DELIMITER //
+
+CREATE PROCEDURE obtener_usuario_por_id (
+    IN p_id_usuario VARCHAR(10)
+)
+BEGIN
+    SELECT u.id_usuario, u.nombre, u.apellidos, tu.tipo_usuario, u.edad, u.fecha_nacimiento
+    FROM usuarios u
+    JOIN tipos_usuarios tu ON u.tipo_usuario_id = tu.id_tipo_usuario
+    WHERE u.id_usuario = p_id_usuario;
+END //
+
+DELIMITER ;
+
+CALL insertar_usuario('1234567890', 'Valerio', 'Quispe', 2, 20, '2003-01-01');
+CALL insertar_usuario('1234567899', 'prueba', 'Quispe', 2, 20, '2003-01-01');
+CALL obtener_usuarios();
+CALL obtener_usuario_por_id('8fc641f9-d813-49fb-a916-bdbc62976eac');
