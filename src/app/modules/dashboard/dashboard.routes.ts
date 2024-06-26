@@ -5,5 +5,6 @@ export const DASHBOARD_ROUTES : Routes  =  [
   {
     path: '',
     loadComponent: () => import('./pages/dashboard-page/dashboard-page.component'),
+    data: { breadcrumb: 'Home' }
   }
 ]

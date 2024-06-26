@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  API_BACKEND:  'http://127.0.0.1:3000'
+  URL_BACKEND:  'http://localhost:3000',
+  URL_BACKEND_SP: 'http://127.0.0.1:8000/api',
 };

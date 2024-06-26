@@ -12,7 +12,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSelectModule } from '@angular/material/select';
 import { CommonModule } from '@angular/common';
 import Swal from 'sweetalert2';
-import { timer } from 'rxjs';
+
+
 
 @Component({
   selector: 'app-table-tasks',
