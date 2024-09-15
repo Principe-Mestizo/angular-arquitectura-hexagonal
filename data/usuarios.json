@@ -1,0 +1,94 @@
+{
+  "usuarios": [
+    {
+      "id": "7c9e6679-7425-40de-944b-e07fc1f90ae7",
+      "usuario": "maria ",
+      "apellidos": "López García",
+      "email": "maria@example.com",
+      "edad": 28,
+      "tipo_usuario": "regular",
+      "estado": false,
+      "imagen": "https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg"
+    },
+    {
+      "id": "3e7c3f6d-9be0-4b0e-b191-47ceed3d7beb",
+      "usuario": "carlos",
+      "apellidos": "Martínez Rodríguez",
+      "email": "carlos@example.com",
+      "edad": 45,
+      "tipo_usuario": "premium",
+      "estado": true,
+      "imagen": "carlos.jpg"
+    },
+    {
+      "id": "5daa6202-2fda-4d5f-b641-2a3e7f0e8b1c",
+      "usuario": "ano",
+      "apellidos": "Sánchez Fernández",
+      "email": "ana@example.com",
+      "edad": 23,
+      "tipo_usuario": "regular",
+      "estado": false,
+      "imagen": "ana.png"
+    },
+    {
+      "id": "a1b2c3d4-e5f6-4a5b-9c3d-2e1f0a9b8c7d",
+      "usuario": "pedro",
+      "apellidos": "Díaz Ruiz",
+      "email": "pedro@example.com",
+      "edad": 37,
+      "tipo_usuario": "premium",
+      "estado": true,
+      "imagen": "pedro.jpg"
+    },
+    {
+      "id": "9f8e7d6c-5b4a-3c2d-1e0f-9a8b7c6d5e4f",
+      "usuario": "laura",
+      "apellidos": "Gómez Torres",
+      "email": "laura@example.com",
+      "edad": 31,
+      "tipo_usuario": "regular",
+      "estado": true,
+      "imagen": "laura.png"
+    },
+    {
+      "id": "2a3b4c5d-6e7f-8g9h-1i2j-3k4l5m6n7o8p",
+      "usuario": "javier",
+      "apellidos": "Hernández Moreno",
+      "email": "javier@example.com",
+      "edad": 29,
+      "tipo_usuario": "admin",
+      "estado": true,
+      "imagen": "javier.jpg"
+    },
+    {
+      "id": "1q2w3e4r-5t6y-7u8i-9o0p-1a2s3d4f5g6h",
+      "usuario": "sofia",
+      "apellidos": "Jiménez Navarro",
+      "email": "sofia@example.com",
+      "edad": 26,
+      "tipo_usuario": "regular",
+      "estado": false,
+      "imagen": "sofia.png"
+    },
+    {
+      "id": "7z6x5c4v-3b2n-1m0k-9j8h-7g6f5d4s3a2q",
+      "usuario": "miguel",
+      "apellidos": "Álvarez Castro",
+      "email": "miguel@example.com",
+      "edad": 42,
+      "tipo_usuario": "premium",
+      "estado": true,
+      "imagen": "miguel.jpg"
+    },
+    {
+      "id": "0p9o8i7u-6y5t-4r3e-2w1q-0a9s8d7f6g5h",
+      "usuario": "elena",
+      "apellidos": "Romero Ortiz",
+      "email": "elena@example.com",
+      "edad": 34,
+      "tipo_usuario": "regular",
+      "estado": true,
+      "imagen": "elena.png"
+    }
+  ]
+}
